@@ -12,9 +12,10 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' /> 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Muli" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -28,11 +29,11 @@
     
     <section id="home">
        
-         <h1 id="pageTitle">Locations</h1>
+         <h1 class="pageTitle">Locations</h1>
           
-         <div id="homeButton">
+         <div class="main-content">
            
-             <a href="geolocate link goes here" id="linkText"> Locate Me</a>
+             <button id="linkText" onclick="getLocation()">Locate Me</button>
             <img id="locateIcon" src="img/locateMe.png">
            
            
@@ -41,10 +42,11 @@
             <h1 class="buttonText">What is your location?</h1>
 
             <select>
-                <option value="LondonNorth">London (North)</option>
-                <option value="LondonSouth">London (South)</option>
-                <option value="LondonEast">London (East)</option>
-                <option value="LondonWest">London (West)</option>
+                <option value="north">London (North)</option>
+                <option value="south">London (South)</option>
+                <option value="east">London (East)</option>
+                <option value="west">London (West)</option>
+                <option value="central">Central London</option>
             </select>
 
             <button>Go</button>
@@ -52,7 +54,7 @@
            </div>
         </div>
         
-        <div id="appDescription">
+        <div class="appDescription">
         
             <p class="descriptionText">Explore London!</p>
             <p class="descriptionText">With our app you can find beatiful locations all across London.</p>
@@ -91,7 +93,8 @@
     <!--Results-->
     <section id="results">
         <a class="back button">Back</a>
-        <h1>Id like to find a spot in South London</h1>
+        <a class="toggle button" id="toggle">Map</a>
+        <h1 .class="listHead">Id like to find a spot in South London</h1>
         <p>There are 2 good spots in your area</p>
         <ol>
             <li id="ListItem1">
@@ -106,17 +109,23 @@
                 <p class="resultsDescription">A public spot home to the O2 Arena and Ravensbourne</p>
             </li>
         </ol>
+        
+        <div id='map'></div>
     </section>
 
     <!--DETAILS-->
 
     <section id="details">
 
+        
         <a class="back button details">Back</a>
-        <img src="img/gpark.jpg">
-        <h2>Greenwich park</h2>
-        <p>A public spot with some nice scenery</p>
-        <a class="more info">More information</a>
+        <div id="info">
+        <h1 class="pageTitle">Greenwich Park</h1>
+        
+        <p class="appDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fringilla urna et nisl suscipit posuere at suscipit tortor. Vestibulum imperdiet egestas tortor, a rhoncus risus viverra ac. Suspendisse nisl neque, dictum at turpis sit amet, dignissim molestie tellus. Aenean maximus varius pellentesque. Quisque interdum tortor eu mauris convallis pharetra.</p>
+        
+        <p><a href="maps.google.com">See location</a> Google Maps</p>
+        </div>
 
     </section>
 
@@ -126,10 +135,18 @@
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
     </script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
+    <script src='js/mapbox.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/show.js"></script>
+    <script src="js/geolocate.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!--
     <script>
         (function (b, o, i, l, e, r) {
             b.GoogleAnalyticsObject = l;
@@ -146,6 +163,7 @@
         ga('create', 'UA-XXXXX-X', 'auto');
         ga('send', 'pageview');
     </script>
+-->
 </body>
 
 </html>
