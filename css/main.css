@@ -242,6 +242,10 @@ section#details {
   transform: translate(10px, 20px, 0);
 }
 
+.marker.user {
+    background-color: crimson;
+}
+
 /*End*/
 
 
