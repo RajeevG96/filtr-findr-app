@@ -12,6 +12,7 @@ var detailsSection = $('section#details')
 var detailsInfo = $('#info')
 var detailsBackButton = $('#details .back')
 var mapBox = $('#map')
+var geoLocate = $('#geoLocate')
 
 //tell the button to do something when we click 
 homeGoButton.click(function () {
@@ -96,5 +97,12 @@ resultsToggleButton.click(function() {
         
     }
    
+})
+
+geoLocate.click(function() {
+    resultsOL.hide()
+        mapBox.show()
+        map.resize()
+        resultsToggleButton.text('List')
     
 })

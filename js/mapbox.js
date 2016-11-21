@@ -37,14 +37,14 @@ function addMarkers(dataList)
   {
     // store the current data item in a variable
     var dataItem = dataList[i]
-    // extract the data item coordinates
-    
     // create a div element for the marker
     var div = document.createElement('div')
     // add a class called 'marker' to the div
     div.className = 'marker'
     // create the custom marker
-    
+    var marker = new mapboxgl.Marker(div)
+      .setLngLat(coordinates) // set the marker position
+      .addTo(map) // add the marker to map
     // add the marker to the list
     markers.push(marker)  
   }
