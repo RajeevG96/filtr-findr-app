@@ -14,6 +14,8 @@ var map = new mapboxgl.Map(
   zoom: 10
 })
 
+
+
 // empty list to store all the markers
 var markers = [] 
 
@@ -37,6 +39,8 @@ function addMarkers(dataList)
   {
     // store the current data item in a variable
     var dataItem = dataList[i]
+    // extract the data item coordinates
+    var coordinates = new mapboxgl.LngLat( dataItem.longitude, dataItem.latitude)
     // create a div element for the marker
     var div = document.createElement('div')
     // add a class called 'marker' to the div
