@@ -12,7 +12,7 @@ function showPosition(position){
     console.log(position)
     
     var latitude = position.coords.latitude
-    var longitude = position.coords.latitude
+    var longitude = position.coords.longitude
     
     //create new mapbox coords object
     var coordinates = new mapboxgl.LngLat( longitude, latitude)
