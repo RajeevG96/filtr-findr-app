@@ -13,6 +13,8 @@ var detailsInfo = $('#info')
 var detailsBackButton = $('#details .back')
 var mapBox = $('#map')
 var geoLocate = $('#geoLocate')
+//define results list array outside of the function (For making clickable map markers!)
+var resultsList = []
 
 //tell the button to do something when we click 
 homeGoButton.click(function () {
@@ -22,7 +24,7 @@ homeGoButton.click(function () {
     console.log("You picked " + chosenOption)
 
     // filter+sort people by user selection
-    var resultsList = filterAndSortList(locationList, chosenOption);
+    resultsList = filterAndSortList(locationList, chosenOption);
     console.log(resultsList);
 
     showList (resultsList, resultsOL)
@@ -41,6 +43,8 @@ homeGoButton.click(function () {
         // show the details!
         resultsSection.hide()
         detailsSection.show()
+
+        $('body').css('background-image','url('+resultData.image+')')
     })
 
     //show results
@@ -68,6 +72,7 @@ ListItem1.click(function () {
 detailsBackButton.click(function () {
     resultsSection.show()
     detailsSection.hide()
+    $('body').css('background-image','url(../img/bg.jpeg)')
 })
 
 resultsToggleButton.click(function() {
@@ -93,6 +98,7 @@ resultsToggleButton.click(function() {
         resultsOL.show()
 //        document.getElementById("toggle").innerHTML = "Map"
         resultsToggleButton.text('Map')
+        $('#results').css('transform','translateY(50%)')
 
         
     }

@@ -50,6 +50,17 @@ function addMarkers(dataList)
       .setLngLat(coordinates) // set the marker position
       .addTo(map) // add the marker to map
     // add the marker to the list
-    markers.push(marker)  
+    markers.push(marker)
+    
+    //Sweeeeeet marker popups
+    //1. Update details section with the data from the selected result
+    //2. Hide the results section
+    //3. Show the details section
+    
+    var clickSteps = 'showDetails(resultsList['+i+'], detailsInfo); resultsSection.hide(); detailsSection.show();'
+    var popupHTML = '<a onclick="' + clickSteps + '">' + dataItem.name + '</a>'
+    var popup = new mapboxgl.Popup({closeButton:false})
+    popup.setHTML(popupHTML)
+    marker.setPopup(popup)
   }
 }

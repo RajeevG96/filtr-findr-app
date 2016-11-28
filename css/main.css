@@ -181,7 +181,7 @@ section#results{
     border-top: 2px solid white;
     border-bottom: 2px solid white;
     margin-top: 5%;
-    
+        
 }
 
 resultsSection li{
@@ -200,6 +200,8 @@ ol li img {
     width: 40%;
     height: auto;
     float: right;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 ol li h2 {
@@ -225,8 +227,47 @@ ol li h2 {
 
 /*Details Section*/
 section#details {
-   
+    position: relative;
+  top: 50%;
+  transform: translateY(150%);
+   }
+
+#details img {
+    width: 40%;
+    height: auto;
+    border: solid rgba(0, 0, 0, 0.64) 10px;
+    margin: 0 auto;
+}
+
+#details a {
+    border-left: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.64);
+    color: white;
+    padding: 5px;
     
+}
+
+#details h2 {
+    border-left: 2px solid white;
+    color: white;
+    width: 485px;
+    margin-top: 5%;
+    background-color: rgba(0, 0, 0, 0.64);
+    padding: 5px;
+}
+
+#details p {
+    border-left: 2px solid white;
+    color: white;
+    width: 485px;
+    background-color: rgba(0, 0, 0, 0.64);
+    padding: 5px;
+    line-height: 1.5em;
+    
+}
+
+#details a.map.button {
+
 }
 /*End*/
 
@@ -240,10 +281,15 @@ section#details {
   border-radius: 50%;
   background-color: rgba(255, 255, 0, 0.6);
   transform: translate(10px, 20px, 0);
+    
 }
 
 .marker.user {
     background-color: crimson;
+}
+
+.mapboxgl-popup-content {
+    color: black;
 }
 
 /*End*/
@@ -264,4 +310,17 @@ section#details {
    
     
 }
+
+/*Hover Effects!!*/
+
+a:hover,
+button:hover {
+    background-color: rgba(255, 255, 255, 0.64);
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.64);
+}
+
+
 
