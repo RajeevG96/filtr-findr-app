@@ -112,3 +112,4 @@ geoLocate.click(function() {
         resultsToggleButton.text('List')
     
 })
+
