@@ -267,9 +267,7 @@ section#details {
     
 }
 
-#details a.map.button {
 
-}
 /*End*/
 
 /*Mapbox stuff*/
@@ -314,6 +312,7 @@ section#details {
 
 /*Hover Effects!!*/
 
+#details a:hover,
 a:hover,
 button:hover {
     background-color: rgba(255, 255, 255, 0.64);

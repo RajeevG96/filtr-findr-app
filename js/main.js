@@ -13,6 +13,7 @@ var detailsInfo = $('#info')
 var detailsBackButton = $('#details .back')
 var mapBox = $('#map')
 var geoLocate = $('#geoLocate')
+var detailsMapButton = $('#info a')
 //define results list array outside of the function (For making clickable map markers!)
 var resultsList = []
 
@@ -98,7 +99,7 @@ resultsToggleButton.click(function() {
         resultsOL.show()
 //        document.getElementById("toggle").innerHTML = "Map"
         resultsToggleButton.text('Map')
-        $('#results').css('transform','translateY(50%)')
+        
 
         
     }
@@ -112,4 +113,11 @@ geoLocate.click(function() {
         resultsToggleButton.text('List')
     
 })
+
+//detailsMapButton.click(function() {
+    //detailsSection.hide()
+    //mapBox.show()
+    //map.resize()
+    //resultsToggleButton.text('List')
+//})
 
